@@ -8,8 +8,10 @@ public class WrapperEx1 {
 		Scanner sc=new Scanner(System.in);
 		//WrapperService ws=new WrapperService();
 		//ws.ageCount(sc);
-		WrapperService ws2=new WrapperService();
-		ws2.ageCount2(sc);
+		//WrapperService ws2=new WrapperService();
+		//ws2.ageCount2(sc);
+		WrapperService ws3=new WrapperService();
+		ws3.ageCount3(sc);
 	}
 
 }

@@ -1,0 +1,31 @@
+package com.karina.lang.ex3;
+
+import java.util.StringTokenizer;
+
+public class TokenMain1 {
+	
+	
+		
+	
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+	
+	
+		
+		String str="a,b,c,d";
+		StringTokenizer st=new StringTokenizer(str,",");
+		
+		while(st.hasMoreTokens()) {
+			String s =st.nextToken();
+			System.out.println(s);
+			
+		}
+
+	}
+
+}

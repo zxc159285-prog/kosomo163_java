@@ -15,6 +15,7 @@ public class StringEx2Main {
 		//이미지파일입니다 or 이미지 파일이 아닙니다 를 출력
 		
 		
+		
 		int idx=fileName.lastIndexOf('.');
 		System.out.println(idx);	//마지막.까지를 찾기
 		
