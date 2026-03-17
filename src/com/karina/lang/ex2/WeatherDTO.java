@@ -3,6 +3,24 @@ package com.karina.lang.ex2;
 public class WeatherDTO {
 	
 	private String cityname;
+	private int kion;
+	private double humidity;
+
+	public int getKion() {
+		return kion;
+	}
+
+	public void setKion(int kion) {
+		this.kion = kion;
+	}
+
+	public double getHumidity() {
+		return humidity;
+	}
+
+	public void setHumidity(double humidity) {
+		this.humidity = humidity;
+	}
 
 	public String getCityname() {
 		return cityname;
