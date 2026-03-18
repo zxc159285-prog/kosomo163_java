@@ -1,5 +1,7 @@
 package com.karina.lang.ex1;
 
+
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class StudentService {
@@ -38,13 +40,23 @@ public class StudentService {
 		System.out.println("===============");
 		}
 		return ar;
-	
+
 	}
 	//학생검색
-		public void search(){
-			StudentView sv=new StudentView();
-			StudentView studentDTO=new StudentView();
-			studentDTO.();
+		public StudentDTO search(StudentDTO[]ar){
+			Scanner sc = new Scanner(System.in);
+			System.out.println("학생이름을 입력하세요");
+			String name=sc.next();
+			
+			for(int i =0;i<ar.length;i++) {
+				if(name.equals(ar[i].getName())) {
+					return ar[i];
+				
+				}
+				
+			}
+			
+			return null;
 			
 		
 	}
