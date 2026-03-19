@@ -1,5 +1,10 @@
 package com.karina.lang.ex1;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -12,7 +17,7 @@ public class StudentService {
 		this.data = "iu-50-68-90-winter-87-85-76-suji-87-67-95";
 	}
 
-	public ArrayList<StudentDTO> init() {
+	public ArrayList<StudentDTO> oldinit() {
 
 		ArrayList list = new ArrayList();
 		// data를 파싱작업
@@ -101,5 +106,51 @@ public class StudentService {
 				return; // 찾아서 지웠으니 반복문을 끝냅니다
 			}
 		}{System.out.println("저장되어있지 않은 학생입니다");}
+	}
+	
+	public void backup(ArrayList<StudentDTO> ar) {
+		//학생들의 정보를 info.txt에 저장하기
+		File file =new File("C:\\JongHyun\\sava\\sub1\\sub2\\info.txt");
+		try {
+			FileWriter fw=new FileWriter(file,true);
+			for(int i=0;i<ar.size();i++) {
+				StudentDTO dto=ar.get(i);
+				fw.write(dto.getName()+"-"+dto.getKor()+"-"+dto.getEng()+"-"+dto.getMath()+"\n");
+				fw.flush();
+				
+			}System.out.println("백업되었습니다");
+			
+		} 
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+	public ArrayList<StudentDTO> init() {
+		//info.txt의 내용을 읽어서 출력
+			File file= new File("C:\\JongHyun\\sava\\sub1\\sub2\\info.txt");
+			ArrayList<StudentDTO> list = new ArrayList<>();
+			try {
+				FileReader fr=new FileReader(file);
+				BufferedReader br= new BufferedReader(fr);
+				String s=null;
+				while((s=br.readLine())!=null) {
+				
+				String[] ar=s.split("-");
+				StudentDTO studentDTO=new StudentDTO();
+				studentDTO.setName(ar[0]);
+				studentDTO.setKor(Integer.parseInt(ar[1]));
+				studentDTO.setEng(Integer.parseInt(ar[2]));
+				studentDTO.setMath(Integer.parseInt(ar[3]));
+				list.add(studentDTO);
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return list;
 	}
 }
